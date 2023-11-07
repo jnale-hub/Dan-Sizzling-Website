@@ -4,160 +4,187 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
-	
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<link rel="stylesheet" href="static/styles.css">
+	<link rel="stylesheet" href="css/style.css">
 	<link rel="icon" href="assets/katana.jpg">
 
 	<title>Dan Sizzling</title>
 
 </head>
 
-<body>
+<body class="font-mono">
 	<!-- Navigation menu -->
-	<header class="navbar navbar-expand navbar-dark bg-dark sticky-top">
-		<div class="navbar-collapse" id="navbarNav">
-			<ul class="navbar-nav mx-auto">
-				<li class="nav-item mx-3">
-					<a class="nav-link" href="#home">HOME</a>
-				</li>
-				<li class="nav-item mx-lg-3">
-					<a class="nav-link" href="#menu">MENU</a>
-				</li>
-				<li class="nav-item mx-lg-3">
-					<a class="nav-link" href="#gallery">GALLERY</a>
-				</li>
-				<li class="nav-item mx-lg-3">
-					<a class="nav-link" href="#about">ABOUT US</a>
-				</li>
-				<li class="nav-item mx-lg-3">
-					<a class="nav-link" href="#findus">FIND US</a>
-				</li>
-			</ul>
+	<nav class="bg-gray-800">
+		<div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+			<div class="relative flex h-16 items-center justify-between">
+				<div class="flex flex-1 items-center justify-evenly xl:justify-between">
+					<div class="flex flex-shrink-0 gap-2 items-center">
+						<img class="h-8 w-auto" src="assets/katana.jpg" alt="Your Company">
+						<span class="text-gray-300 text-lg font-medium">Dan Sizzling</span>
+					</div>
+					<!-- Add a mobile menu button for smaller screens -->
+					<div class="sm:hidden absolute right-0">
+						<button id="mobile-menu-button" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
+							<svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+							  </svg>
+						</button>
+					</div>
+					<div class="hidden sm:ml-6 sm:block">
+						<div class="flex space-x-4">
+							<a href="#home"
+								class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+								aria-current="page">Home</a>
+							<a href="#menu"
+								class="text-gray-300 hover-bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Menu</a>
+							<a href="#gallery"
+								class="text-gray-300 hover-bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Gallery</a>
+							<a href="#findus"
+								class="text-gray-300 hover-bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Find Us</a>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-	</header>
+	
+		<!-- Mobile menu, show/hide based on menu state. -->
+		<div class="sm:hidden" id="mobile-menu" style="display: none;">
+			<div class="space-y-1 px-2 pb-3 pt-2">
+				<a href="#home" class="text-gray-300 hover-bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+					aria-current="page">Home</a>
+				<a href="#menu"
+					class="text-gray-300 hover-bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Menu</a>
+				<a href="#gallery"
+					class="text-gray-300 hover-bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Gallery</a>
+				<a href="#findus"
+					class="text-gray-300 hover-bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Find Us</a>
+			</div>
+		</div>
+	</nav>
+	
+	<!-- JavaScript to toggle the mobile menu -->
+	<script>
+		document.getElementById('mobile-menu-button').addEventListener('click', function () {
+			var mobileMenu = document.getElementById('mobile-menu');
+			if (mobileMenu.style.display === 'block') {
+				mobileMenu.style.display = 'none';
+			} else {
+				mobileMenu.style.display = 'block';
+			}
+		});
+	</script>
+	
 	<main>
-	<!-- Sections -->
-	<section id="home" style="background-image: url('assets/bg.png');">
-		<div class="container">
-			<img src="assets/katana.jpg" alt="Dan Sizzling House Logo">
-			<h1>Dan Sizzling House</h1>
-			<p>Sosyal Pero 'D Mahal</p>
-		</div>
-	</section>
+		<!-- Sections -->
+		<section id="home" style="background-image: url('assets/bg.png');"
+			class="min-h-screen text-center items-center justify-center">
+			<img src="assets/katana.jpg" alt="Dan Sizzling House Logo" class="mx-auto">
+			<p class="text-gray-50 decoration-black text-5xl font-extrabold">Social Pero 'D Mahal</p>
+		</section>
 
 
-	<section id="menu">
-		<div class="container">
-			<h2>Menu</h2>
-			<p>Check out our delicious menu!</p>
-			<div class="row">
-				<div class="col-md-6">
-					<img src="assets/menu1.jpg" alt="Menu Item 1">
-				</div>
-				<div class="col-md-6">
-					<img src="assets/menu2.jpg" alt="Menu Item 2">
+		<section id="menu" class="py-10">
+			<div class="container mx-auto text-center">
+				<h2 class="text-4xl font-extrabold rounded-md inline-block py-5">Check out our delicious menu!</h2>
+				<div class="grid grid-cols-2 gap-5 p-3">
+					<div class="md:col-span-1 col-span-2">
+						<img src="assets/menu1.jpg" alt="Menu Item 1" class="rounded-lg lg:p-10 drop-shadow-2xl">
+					</div>
+					<div class="md:col-span-1 col-span-2">
+						<img src="assets/menu2.jpg" alt="Menu Item 2" class="rounded-lg lg:p-10 drop-shadow-2xl">
+					</div>
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 
 
-	<section id="gallery">
-		<div class="container">
-			<h2>Gallery</h2>
-			<p>See some photos of our restaurant on our different branches!</p>
-			<h3>📍 San Vicente, Baao Branch</h3>
-			<div class="row">
-				<div class="col-md-3 col-6 menu-img">
-					<img src="assets/sanjuan4.jpg" class="img-fluid" alt="Menu Item 1">
+		<section id="gallery" class="py-10 bg-orange-50">
+			<div class="container mx-auto">
+				<h2 class="text-4xl font-extrabold py-3 uppercase text-center">Gallery</h2>
+				<p class="text-xl font-bold py-3 text-center">See some photos of our restaurant on our different
+					branches!</p>
+				<div class="flex justify-center">
+					<h3
+						class="text-purple-600 bg-purple-100 inline-block ring-2 ring-purple-700 p-1 px-2 rounded-full font-medium mt-5">
+						📍 San Vicente, Baao Branch</h3>
 				</div>
-				<div class="col-md-3 col-6">
-					<img src="assets/sanjuan3.jpg" class="img-fluid" alt="Menu Item 2">
+				<div class="grid grid-cols-2 gap-10 p-5">
+					<div class="">
+						<img src="assets/sanjuan3.jpg" class="ring-1 ring-slate-900/5" alt="Menu Item 2">
+					</div>
+					<div class="">
+						<img src="assets/sanjuan2.jpg" class="ring-1 ring-slate-900/5" alt="Menu Item 1">
+					</div>
 				</div>
-				<div class="col-md-3 col-6">
-					<img src="assets/sanjuan2.jpg" class="img-fluid" alt="Menu Item 1">
+				
+				<div class="flex justify-center">
+				<h3
+					class="text-purple-600 bg-purple-100 inline-block ring-2 ring-purple-700 p-1 px-2 rounded-full font-medium mt-5">
+					📍 Buluang, Baao Branch</h3></div>
+				<div class="grid grid-cols-2 gap-10 p-5">
+					<div class="">
+						<img src="assets/buluang4.jpg" alt="Menu Item 1">
+					</div>
+					<div class="">
+						<img src="assets/buluang1.jpg" alt="Menu Item 2">
+					</div>
 				</div>
-				<div class="col-md-3 col-6">
-					<img src="assets/sanjuan4.jpg" class="img-fluid" alt="Menu Item 2">
+				
+				<div class="flex justify-center">
+				<h3
+					class="text-purple-600 bg-purple-100 inline-block ring-2 ring-purple-700 p-1 px-2 rounded-full font-medium mt-5">
+					📍 San Nicolas, Iriga City Branch</h3></div>
+				<div class="grid grid-cols-2 gap-10 p-5">
+					<div class="">
+						<img src="assets/sannicolas1.jpg" alt="san nicolas Item 1">
+					</div>
+					<div class="">
+						<img src="assets/sannicolas2.jpg" alt="Menu Item 2">
+					</div>
+					<div class="">
+						<img src="assets/sannicolas3.jpg" alt="Menu Item 1">
+					</div>
+					<div class="">
+						<img src="assets/sannicolas4.jpg" alt="Menu Item 2">
+					</div>
 				</div>
 			</div>
-			<h3>📍 Buluang, Baao Branch</h3>
-			<div class="row">
-				<div class="col-md-3 col-6">
-					<img src="assets/buluang4.jpg" alt="Menu Item 1">
-				</div>
-				<div class="col-md-3 col-6">
-					<img src="assets/buluang1.jpg" alt="Menu Item 2">
-				</div>
-				<div class="col-md-3 col-6">
-					<img src="assets/buluang2.jpg" alt="Menu Item 1">
-				</div>
-				<div class="col-md-3 col-6">
-					<img src="assets/buluang5.jpg" alt="Menu Item 2">
+		</section>
+
+		<section id="findus" class="bg-slate-800 text-slate-50">
+			<div class="container py-10 mx-auto">
+				<h2 class="text-4xl font-extrabold py-3 uppercase text-center">Find Us</h2>
+				<p  class="text-xl font-bold pb-3 text-center">Visit us at our location.</p>
+
+				<div class="grid grid-cols-3 gap-10">
+					<div class="md:col-span-1 col-span-full px-3">
+						<h5>📍 San Vicente, Baao Branch</h5>
+						<iframe
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31042.82411739746!2d123.3476632833481!3d13.452323345827933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a197f58eff6907%3A0x7fbcaf1b125aca83!2sDan%20Sizzling!5e0!3m2!1sen!2sph!4v1684297604013!5m2!1sen!2sph"
+							width="100%" height="300" style="border:0;" loading="lazy"
+							referrerpolicy="no-referrer-when-downgrade"></iframe>
+					</div>
+
+					<div class="md:col-span-1 col-span-full px-3">
+						<h5>📍 Buluang, Baao Branch</h5>
+						<iframe
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31040.934827533427!2d123.32535401083985!3d13.466893700000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a197c478c4bbb5%3A0xf69e014f3cdba525!2sDan%20Sizzling%20Buluang%20Branch!5e0!3m2!1sen!2sph!4v1684298064784!5m2!1sen!2sph"
+							width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+							referrerpolicy="no-referrer-when-downgrade"></iframe>
+					</div>
+
+					<div class="md:col-span-1 col-span-full px-3">
+						<h5>📍 San Nicolas, Iriga Branch</h5>
+						<iframe
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31042.82411739746!2d123.3476632833481!3d13.452323345827933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a197f58eff6907%3A0x7fbcaf1b125aca83!2sDan%20Sizzling!5e0!3m2!1sen!2sph!4v1684297604013!5m2!1sen!2sph"
+							width="100%" height="300" style="border:0;" loading="lazy"
+							referrerpolicy="no-referrer-when-downgrade"></iframe>
+					</div>
 				</div>
 			</div>
-			<h3>📍 San Nicolas, Iriga City Branch</h3>
-			<div class="row">
-				<div class="col-md-3 col-6">
-					<img src="assets/sannicolas1.jpg" alt="san nicolas Item 1">
-				</div>
-				<div class="col-md-3 col-6">
-					<img src="assets/sannicolas2.jpg" alt="Menu Item 2">
-				</div>
-				<div class="col-md-3 col-6">
-					<img src="assets/sannicolas3.jpg" alt="Menu Item 1">
-				</div>
-				<div class="col-md-3 col-6">
-					<img src="assets/sannicolas4.jpg" alt="Menu Item 2">
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section id="about">
-		<div class="container">
-			<h2>About Us</h2>
-			<p>Learn more about our restaurant and team.</p>
-		</div>
-	</section>
-
-	<section id="findus" >
-		<div class="container">
-			<h2>Find Us</h2>
-			<p>Visit us at our location.</p>
-
-			<div class="row">
-				<div class="col-md-4 mb-5">
-					<h5>📍 San Vicente, Baao Branch</h5>
-					<iframe
-						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31042.82411739746!2d123.3476632833481!3d13.452323345827933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a197f58eff6907%3A0x7fbcaf1b125aca83!2sDan%20Sizzling!5e0!3m2!1sen!2sph!4v1684297604013!5m2!1sen!2sph"
-						width="100%" height="300" style="border:0;" loading="lazy"
-						referrerpolicy="no-referrer-when-downgrade"></iframe>
-				</div>
-
-				<div class="col-md-4 mb-5">
-					<h5>📍 Buluang, Baao Branch</h5>
-					<iframe
-						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31040.934827533427!2d123.32535401083985!3d13.466893700000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a197c478c4bbb5%3A0xf69e014f3cdba525!2sDan%20Sizzling%20Buluang%20Branch!5e0!3m2!1sen!2sph!4v1684298064784!5m2!1sen!2sph"
-						width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-						referrerpolicy="no-referrer-when-downgrade"></iframe>
-				</div>
-
-				<div class="col-md-4 mb-5">
-					<h5>📍 San Nicolas, Iriga Branch</h5>
-					<iframe
-						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31042.82411739746!2d123.3476632833481!3d13.452323345827933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a197f58eff6907%3A0x7fbcaf1b125aca83!2sDan%20Sizzling!5e0!3m2!1sen!2sph!4v1684297604013!5m2!1sen!2sph"
-						width="100%" height="300" style="border:0;" loading="lazy"
-						referrerpolicy="no-referrer-when-downgrade"></iframe>
-				</div>
-			</div>
-		</div>
-	</section>
+		</section>
 	</main>
-	<footer class="footer">
-		<p>&copy; 2023 Dan Sizzling Website</p>
+	<footer class="footer place-items-center text-sm py-10 bg-slate-300">
+		<p class="font-semibold">&copy; 2023 Dan Sizzling Website</p>
 	</footer>
 </body>
 
